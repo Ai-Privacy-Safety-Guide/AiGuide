@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Privacy & Data Safety Guide</title>
+<style>
+:root{--navy:#11152f;--purple:#6c4cff;--cyan:#28d7d0;--pink:#ff5fa2;--bg:#f6f7ff;--card:#fff;--text:#20243b;--muted:#62677d;--shadow:0 12px 35px rgba(30,35,80,.12)}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,#11152f,#39246e 58%,#166d78);color:white;position:sticky;top:0;z-index:10;box-shadow:0 5px 20px #0002}
+.nav{max-width:1150px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}.logo{font-weight:800;font-size:18px}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button{background:transparent;border:0;color:white;padding:9px 11px;border-radius:10px;cursor:pointer}.navlinks button:hover{background:#ffffff22}
+section{max-width:1150px;margin:auto;padding:65px 20px}.hero{min-height:620px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px;color:white;max-width:none;padding:85px max(20px,calc((100% - 1150px)/2));background:linear-gradient(135deg,#11152f,#3d2678 55%,#14747b)}
+.badge{display:inline-block;background:#ffffff1c;border:1px solid #ffffff35;padding:8px 13px;border-radius:999px}.hero h1{font-size:clamp(40px,6vw,70px);line-height:1.02;margin:18px 0}.hero p{font-size:19px;line-height:1.7;color:#eef2ff}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:13px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:var(--cyan);color:#071c2a}.secondary{background:#fff;color:#27204f}.hero-card{background:#ffffff12;border:1px solid #ffffff25;border-radius:25px;padding:25px;box-shadow:0 25px 60px #0003;backdrop-filter:blur(10px)}.hero-card .flow{display:grid;gap:12px}.flow div{padding:18px;border-radius:16px;background:#ffffff13;border:1px solid #ffffff20}.flow strong{display:block;margin-bottom:4px}
+h2{font-size:36px;margin:0 0 10px}.lead{color:var(--muted);line-height:1.7;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border-radius:20px;padding:23px;box-shadow:var(--shadow);border:1px solid #e9eaf4}.card h3{margin-top:0}.icon{font-size:30px}.riskgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.risk{border-radius:18px;padding:20px}.low{background:#e5f9ef;border-left:6px solid #20a76a}.moderate{background:#fff5d9;border-left:6px solid #e3a500}.high{background:#ffe6eb;border-left:6px solid #e44362}
+.checker{background:white;border-radius:24px;padding:25px;box-shadow:var(--shadow);border:1px solid #e7e8f3}.options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.option{padding:15px;border:1px solid #dddff0;border-radius:14px;background:#fafaff;cursor:pointer;text-align:left}.option:hover,.option.selected{border-color:var(--purple);background:#f0edff}.input,textarea{width:100%;padding:14px;border:1px solid #d8d9e8;border-radius:12px;font:inherit;outline:none;margin:7px 0 12px}.input:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6c4cff18}.result{margin-top:18px;padding:20px;border-radius:16px;display:none}.result.show{display:block}.result h3{margin-top:0}.result.lowres{background:#e5f9ef}.result.modres{background:#fff5d9}.result.highres{background:#ffe6eb}.tips{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tip{padding:18px;background:white;border-radius:16px;box-shadow:var(--shadow)}footer{background:var(--navy);color:white;padding:35px 20px;text-align:center}.small{color:#858aa0;font-size:13px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto}.grid,.riskgrid,.options{grid-template-columns:1fr 1fr}.tips{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%;overflow:auto;flex-wrap:nowrap}}
+@media(max-width:520px){.grid,.riskgrid,.options{grid-template-columns:1fr}.hero h1{font-size:43px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">🛡️ AI Privacy Guide</div><div class="navlinks">
+<button onclick="go('home')">Home</button><button onclick="go('check')">Check Your Data</button><button onclick="go('fraud')">Fraud Checker</button><button onclick="go('tips')">Privacy Tips</button><button onclick="go('footprint')">Digital Footprint</button><button onclick="go('deepfake')">AI & Deepfakes</button><button onclick="go('cyberhelp')">Cyber Help</button><button onclick="go('incident')">Incident Guide</button><button onclick="go('about')">About</button>
+</div></div></header>
+
+<main>
+<section id="home" class="hero">
+<div><span class="badge">AI & Data Science • College Project</span><h1>AI Privacy &<br>Data Safety Guide</h1><p>Think before you share. Stay safe while using AI.</p><p>AI can help us study, create and solve problems—but the information we give it deserves careful attention.</p>
+<div class="cta"><button class="btn primary" onclick="go('check')">🔍 Check Your Data</button><button class="btn secondary" onclick="go('fraud')">🚨 Check a Message</button></div></div>
+<div class="hero-card"><h2 style="font-size:27px">STOP → THINK → CHECK</h2><div class="flow"><div><strong>1. STOP</strong>Pause before uploading or sharing.</div><div><strong>2. THINK</strong>Ask: “Is this sensitive or private?”</div><div><strong>3. CHECK</strong>Use the guide and follow safe practices.</div></div></div>
+</section>
+
+<section id="check"><h2>Can I Give This to AI?</h2><p class="lead">Select the type of information you are thinking about sharing. The guide gives an educational risk assessment and practical advice.</p>
+<div class="checker"><div class="options" id="options"></div>
+<label for="other">Other — describe your situation</label><input id="other" class="input" placeholder="Example: Can I give my assignment to an AI tool to solve?">
+<button class="btn primary" onclick="checkOther()">Check My Situation</button>
+<div id="dataResult" class="result"></div></div></section>
+
+<section id="fraud"><h2>🚨 Fraud Message & Link Checker</h2><p class="lead">Paste a suspicious message or link to look for common warning signs such as urgency, fake rewards, sensitive-data requests and suspicious URLs.</p>
+<div class="checker"><label>Suspicious message</label><textarea id="message" rows="6" placeholder="Paste SMS, WhatsApp or email text here..."></textarea>
+<label>Suspicious link / URL (optional)</label><input id="url" class="input" placeholder="https://example.com/...">
+<button class="btn primary" onclick="checkFraud()">Check Now</button><div id="fraudResult" class="result"></div>
+<p class="small">Educational tool only. This automated assessment is not a guarantee that a message or link is safe.</p></div></section>
+
+<section><h2>Understand the Risk Levels</h2><p class="lead">Risk depends on the type of information, the context, and what could happen if it is exposed.</p>
+<div class="riskgrid"><div class="risk low"><h3>🟢 LOW RISK</h3><p>Usually non-sensitive information such as general educational questions or ordinary objects.</p></div><div class="risk moderate"><h3>🟡 MODERATE RISK</h3><p>Information that may involve privacy, personal context, academic-integrity or accuracy concerns.</p></div><div class="risk high"><h3>🔴 HIGH RISK</h3><p>Highly sensitive information such as OTPs, passwords, bank details, identity documents or biometrics.</p></div></div></section>
+
+<section id="tips"><h2>🔐 Privacy Tips</h2><p class="lead">Small habits can make AI use safer.</p><div class="tips">
+<div class="tip">🔑 <strong>Never share passwords or OTPs.</strong><br>AI tools do not need your authentication secrets.</div>
+<div class="tip">🪪 <strong>Protect identity documents.</strong><br>Avoid uploading Aadhaar, IDs or similar documents unless absolutely necessary and appropriate.</div>
+<div class="tip">💳 <strong>Keep financial information private.</strong><br>Do not share bank, card or payment credentials.</div>
+<div class="tip">📍 <strong>Be careful with location.</strong><br>Avoid sharing your exact live location unnecessarily.</div>
+<div class="tip">📸 <strong>Think before uploading photos.</strong><br>Check whether a photo reveals private information.</div>
+<div class="tip">🎓 <strong>Check college rules.</strong><br>Understand your institution's policy before using AI for assignments.</div>
+<div class="tip">🔎 <strong>Verify important answers.</strong><br>AI can make mistakes, so check important information.</div>
+<div class="tip">🛡️ <strong>Use strong, unique passwords.</strong><br>Never reuse sensitive passwords across important accounts.</div>
+</div></section>
+
+<section><h2>🔑 Strong Password vs Weak Password</h2><div class="grid"><div class="card"><h3>❌ Weak examples</h3><p><code>password123</code><br><code>12345678</code><br><code>yourname123</code></p><p class="small">These are examples for education—do not use them.</p></div><div class="card"><h3>✅ Better approach</h3><p>Use a long, unique passphrase that does not contain easily guessed personal information. Consider a reputable password manager.</p></div><div class="card"><h3>💡 Remember</h3><p>A password should be unique to the account. Never give your password or OTP to another person or an AI tool.</p></div></div></section>
+
+<section><h2>📸 AI Images & Social Media Privacy</h2><div class="card"><p>AI-generated and edited photo trends can be fun, but think about what the original image reveals. Avoid uploading private photographs, school IDs, addresses, identity documents or other sensitive material to tools unless you understand the privacy implications.</p></div></section>
+
+
+<section id="footprint"><h2>👣 Understand Your Digital Footprint</h2><p class="lead">Your digital footprint is the trail of information created when you use websites, apps, social media and online services.</p>
+<div class="grid">
+<div class="card"><h3>🖱️ Active footprint</h3><p>Information you deliberately share, such as posts, comments, photos, reviews and profile details.</p></div>
+<div class="card"><h3>⚙️ Passive footprint</h3><p>Information that may be collected as you browse or use services, such as approximate location, device data, cookies and activity records.</p></div>
+<div class="card"><h3>🔎 Think before posting</h3><p>Posts can be copied, screenshotted or shared beyond the audience you intended. Privacy settings reduce exposure but cannot guarantee control.</p></div></div>
+<div class="checker" style="margin-top:18px"><h3>Quick digital-footprint check</h3><p>Review these habits:</p>
+<label><input type="checkbox"> I review who can see my social media posts.</label><br><label><input type="checkbox"> I avoid posting IDs, tickets, addresses or live location.</label><br><label><input type="checkbox"> I check app permissions and privacy settings.</label><br><label><input type="checkbox"> I think before sharing photos of other people.</label><br><label><input type="checkbox"> I remove old public details I no longer need.</label><p class="small">This checklist is for awareness and does not certify your privacy.</p></div></section>
+
+<section id="deepfake"><h2>🎭 AI Images, Deepfakes & Voice Cloning</h2><p class="lead">AI can generate or alter images, videos and audio. Convincing media is not automatically authentic, and visual clues alone may not prove whether it is genuine.</p>
+<div class="grid"><div class="card"><h3>🖼️ AI-generated images</h3><p>Images created from prompts or altered using AI may depict scenes or events that never happened.</p></div><div class="card"><h3>🎬 Deepfake videos</h3><p>Media that uses AI to imitate or alter a person's face, expressions or actions. It can be used creatively or to mislead.</p></div><div class="card"><h3>🎙️ Voice cloning</h3><p>AI-generated audio can imitate a person's voice. Do not rely on a familiar-sounding voice alone to verify an urgent request.</p></div></div>
+<div class="checker" style="margin-top:18px"><h3>How to verify suspicious media</h3><ul><li>Check trusted, independent sources for the same event.</li><li>Look for the original source, date and context.</li><li>Contact the person through a separate, already-known channel if a request sounds unusual.</li><li>Do not forward unverified media or accuse someone based only on an AI detector.</li><li>Ask permission before uploading or editing another person's image or voice.</li></ul><p><strong>Remember:</strong> AI detectors can make mistakes. Treat results as clues, not proof.</p></div></section>
+
+<section id="cyberhelp"><h2>🛡️ Official Cybersecurity Help (India)</h2><p class="lead">If you face a cyber incident, use official channels and tell a trusted adult or appropriate support person.</p>
+<div class="grid"><div class="card"><h3>🚨 Report cybercrime</h3><p>Use the Government of India's National Cyber Crime Reporting Portal.</p><p><a href="https://www.cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Open cybercrime.gov.in ↗</a></p></div><div class="card"><h3>📞 Financial cyber fraud</h3><p>For urgent reporting of financial cyber fraud in India, call <strong>1930</strong> promptly and follow the official reporting process.</p></div><div class="card"><h3>🔐 Cybersecurity advisories</h3><p>CERT-In publishes cybersecurity advisories and awareness information.</p><p><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">Open CERT-In ↗</a></p></div></div><p class="small">Verify contact details on official websites. This guide cannot investigate or resolve a case.</p></section>
+
+<section id="incident"><h2>🧭 What to Do After a Privacy Incident</h2><p class="lead">Practical next steps depend on what happened.</p><div class="grid">
+<div class="card"><h3>Suspicious link or message</h3><p>Do not click, reply, download attachments or share verification codes. Verify the sender separately.</p></div>
+<div class="card"><h3>Account may be compromised</h3><p>Use the official app or website to secure the account, change its password, enable multi-factor authentication and review active sessions.</p></div>
+<div class="card"><h3>Money lost to a scam</h3><p>Contact your bank or payment provider through an official channel, report promptly through 1930 and the official cybercrime portal, and preserve relevant records.</p></div>
+<div class="card"><h3>Private information shared</h3><p>Remove the post or revoke access if possible, review settings, notify the service and seek trusted support if you feel unsafe.</p></div>
+<div class="card"><h3>Impersonation or manipulated media</h3><p>Save relevant links or screenshots where safe, report the content on the platform and avoid resharing it.</p></div>
+<div class="card"><h3>Someone else's image or voice</h3><p>Get permission before sharing or editing it. If content is used to harass or deceive, support the affected person and report it.</p></div></div></section>
+
+<section id="about"><h2>About the Project</h2><p class="lead">AI Privacy & Data Safety Guide is a student field project created to spread awareness about safer AI use, personal data protection and online scam awareness.</p><div class="grid"><div class="card"><h3>USER INPUT</h3><p>Information or message the user is considering sharing.</p></div><div class="card"><h3>RISK ANALYSIS</h3><p>Rule-based educational assessment, not a live AI diagnosis or a guarantee of safety.</p></div><div class="card"><h3>SAFETY ADVICE</h3><p>Practical steps to reduce privacy and scam risks.</p></div></div></section>
+</main>
+<footer><strong>AI Privacy & Data Safety Guide</strong><p>Student educational project • AI & Data Science</p><p class="small">This website provides general educational guidance and is not a substitute for official cybersecurity advice.</p></footer>
+
+<script>
+const data = [
+["🌸","Flower / ordinary object photo","LOW","An ordinary object photo normally does not contain sensitive personal information.","You can usually share it, while checking that the image does not reveal private details."],
+["🎓","School assignment / project","MODERATE","AI use can raise accuracy and academic-integrity concerns.","Check your college rules and use AI as permitted. Verify the answer."],
+["🏫","Name and school/college details","MODERATE","Combining personal and institution information can reveal more about you.","Share only what is necessary and avoid adding other sensitive details."],
+["📸","Personal photo","MODERATE","A personal image can reveal identity, surroundings or other private information.","Consider who will process the image and avoid private or sensitive photos."],
+["🪪","Aadhaar / identity document","HIGH","Identity documents contain highly sensitive personal information.","Do not upload them to an AI tool unless there is a legitimate, trusted reason and appropriate protection."],
+["🔑","Password","HIGH","A password is an authentication secret.","Never share passwords with an AI tool or another person."],
+["🔢","OTP","HIGH","An OTP can be used to authenticate an account or transaction.","Never share an OTP."],
+["💳","Bank information","HIGH","Financial information can enable fraud or unauthorized transactions.","Keep bank/card credentials private."],
+["📍","Exact location","HIGH","Precise location information can create privacy and safety risks.","Avoid sharing exact live location unless necessary and trusted."],
+["🧬","Biometric information","HIGH","Biometric information is highly sensitive and difficult to change if compromised.","Do not upload biometric data casually."],
+];
+const options=document.getElementById("options");
+data.forEach((x,i)=>{let b=document.createElement("button");b.className="option";b.innerHTML=`<span class="icon">${x[0]}</span><br><strong>${x[1]}</strong>`;b.onclick=()=>showData(i);options.appendChild(b)});
+function showData(i){const x=data[i],r=document.getElementById("dataResult");r.className="result show "+(x[2]=="LOW"?"lowres":x[2]=="MODERATE"?"modres":"highres");r.innerHTML=`<h3>${x[2]=="LOW"?"🟢":x[2]=="MODERATE"?"🟡":"🔴"} ${x[2]} RISK</h3><p><strong>Why?</strong> ${x[3]}</p><p><strong>What should you do?</strong> ${x[4]}</p>`;document.querySelectorAll(".option").forEach((b,j)=>b.classList.toggle("selected",j===i));r.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function classifyText(t){
+ t=t.toLowerCase();
+ const hasAny=words=>words.some(k=>t.includes(k));
+ const general=hasAny(["what is","explain","meaning of","definition","sample","fictional","template","how does"]);
+ const sharing=hasAny(["upload","share","send","give","attach","paste","post","submit"]);
+ const secrets=["otp","one time password","password","passcode","login code","verification code","cvv","pin number","recovery code"];
+ const sensitive=["aadhaar","aadhar","passport","pan card","identity document","government id","biometric","fingerprint","face scan","iris scan","bank details","bank account number","card number","medical report","prescription","exact live location","live location"];
+ const personal=["college id","student id","school id","id card","personal photo","private photo","my photo","address","phone number","email address","date of birth","private conversation","assignment","homework","exam","voice recording","voice note","family details","full name","college","school"];
+ if(hasAny(secrets))return ["HIGH","The description includes an authentication secret or payment-security detail. Exposure could allow account access or attempted transactions.","Never share passwords, OTPs, PINs or recovery codes with an AI tool. If already shared, secure the account through its official service and contact your bank if relevant."];
+ if(hasAny(sensitive))return ["HIGH","This may involve highly sensitive identity, financial, biometric, medical or precise-location information. Exposure can create risks that may be difficult to reverse.","Avoid uploading the original. Use a general text description or remove identifying details if sharing is genuinely necessary. Check the tool's privacy practices."];
+ if(hasAny(personal)){
+  if(general&&!sharing&&!hasAny(["my ","mine"]))return ["LOW","This appears to be a general educational question, not a request to share actual personal data.","Ask in general terms and do not add real identifying details, documents or private media."];
+  return ["MODERATE","This may reveal personal, academic or contextual information. Risk depends on the exact details, purpose and the AI service's data practices.","Share only what is needed. Remove names, ID numbers, faces, contact details and location clues where possible. Check college rules and the tool's privacy policy."];
+ }
+ if(sharing&&hasAny(["document","file","photo","picture","image","recording","data","details"]))return ["MODERATE","The content may contain information not obvious from the description, so its risk is uncertain.","Review the content for personal or sensitive details and remove them before sharing."];
+ return ["LOW","No clearly sensitive information was detected in the words provided. This does not prove the situation is safe; important context may be missing.","Avoid including real personal details. Treat credentials, identity, financial, medical, biometric and precise-location data as sensitive."];
+}
+function checkOther(){const t=document.getElementById("other").value.trim();const r=document.getElementById("dataResult");if(!t){r.className="result show modres";r.innerHTML="<h3>Tell us what you want to check</h3><p>Type your situation in the box first.</p>";return}const a=classifyText(t);r.className="result show "+(a[0]=="LOW"?"lowres":a[0]=="MODERATE"?"modres":"highres");r.innerHTML=`<h3>${a[0]=="LOW"?"🟢":a[0]=="MODERATE"?"🟡":"🔴"} ${a[0]} RISK</h3><p><strong>Why?</strong> ${a[1]}</p><p><strong>What should you do?</strong> ${a[2]}</p>`;r.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function checkFraud(){const msg=document.getElementById("message").value.trim(),url=document.getElementById("url").value.trim(),text=(msg+" "+url).toLowerCase();let reasons=[];if(/urgent|immediately|expire|act now|last chance|within \d+ hour/.test(text))reasons.push("Urgent or pressure-based language");if(/congratulations|selected|winner|reward|prize|₹|rs\.?/.test(text))reasons.push("Unexpected reward, prize or money claim");if(/otp|password|bank|cvv|card|pin|verification code/.test(text))reasons.push("Request for sensitive information");if(/click|claim|verify|pay|payment/.test(text))reasons.push("Pressure to click, claim, verify or pay");if(url){try{const u=new URL(url);if(["example.com","example.org","example.net"].includes(u.hostname))reasons.push("Demo/example domain detected (safe for project testing, but the message itself may still be suspicious)");else if(!["https:"].includes(u.protocol))reasons.push("Link does not use HTTPS");}catch(e){reasons.push("The entered URL does not appear to be valid")}}let level="LOW";if(reasons.length>=2)level="HIGH";else if(reasons.length===1)level="MODERATE";const r=document.getElementById("fraudResult");r.className="result show "+(level=="LOW"?"lowres":level=="MODERATE"?"modres":"highres");r.innerHTML=`<h3>${level=="LOW"?"🟢":level=="MODERATE"?"🟡":"🔴"} ${level} RISK</h3><p><strong>Warning signs found:</strong></p>${reasons.length?`<ul>${reasons.map(x=>`<li>${x}</li>`).join("")}</ul>`:"<p>No obvious common warning signs were detected.</p>"}<p><strong>Safety advice:</strong> Do not click links or share sensitive information until you independently verify the sender and request.</p>`;r.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+</script>
+</body>
+</html>
